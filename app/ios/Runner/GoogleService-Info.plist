@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:427235932316:ios:5452249ccac23ea9855559</string>
+	<string>1:427235932316:ios:e0426dfd9c48d0eb855559</string>
 	<key>DATABASE_URL</key>
 	<string>https://allergy-prevention-juni.firebaseio.com</string>
 </dict>
