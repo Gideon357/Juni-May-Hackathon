@@ -21,8 +21,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-
-  image_picker:
+  provider: ^4.0.5+1
+  image_picker: ^0.6.6+1
   google_sign_in: ^4.4.4
   cloud_firestore: ^0.13.0+1 
   firebase_auth: ^0.16.0
