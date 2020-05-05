@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "427235932316",
+    "firebase_url": "https://allergy-prevention-juni.firebaseio.com",
+    "project_id": "allergy-prevention-juni",
+    "storage_bucket": "allergy-prevention-juni.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427235932316:android:0644b9c4d37295b5855559",
+        "android_client_info": {
+          "package_name": "com.gideongrinberg.allergy_detection_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427235932316-9sc3pcti16r1kbgtm716eainv1a26kg6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXP6_-VrTeLuK4Ky_PZjfmsVQsg3-OaC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427235932316-9sc3pcti16r1kbgtm716eainv1a26kg6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "427235932316-3go5u166gsvia9smflttgpvfgqnr1mnn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gideongrinberg.allergyDetectionApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
