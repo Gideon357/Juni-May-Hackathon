@@ -1,13 +1,21 @@
+import 'package:allergy_detection_app/services/auth_logic.dart';
 import 'package:flutter/material.dart';
-import 'package:allergy_detection_app/pages/home/scanner.dart';
-import 'package:allergy_detection_app/pages/authenticate/sign_in.dart';
+import 'package:allergy_detection_app/pages/wrapper.dart';
+import 'package:provider/provider.dart';
+import 'package:allergy_detection_app/services/user.dart';
 
-void main() {
-  runApp(MaterialApp(
-    initialRoute: '/',
-    routes: {
-      '/' : (context) => SignIn()
-    },
-  ));
+void main() => runApp(MyApp());
+  
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return StreamProvider<User>.value(
+      value: AuthService().user,
+      child: MaterialApp(
+        home: Wrapper(),
+      ),
+    );
+  }
 }
-
