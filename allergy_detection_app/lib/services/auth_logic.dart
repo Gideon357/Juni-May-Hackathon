@@ -4,33 +4,40 @@ import 'package:allergy_detection_app/services/user.dart';
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // Custom User object based on the FirebaseAuth User
-  User _customUser(FirebaseUser user) {
-    return user != null ? new User(uid: user.uid) : null;
+  // create user obj based on firebase user
+  User _userFromFirebaseUser(FirebaseUser user) {
+    return user != null ? User(uid: user.uid) : null;
   }
 
-  // Use firebase streams
+  // auth change user stream
   Stream<User> get user {
     return _auth.onAuthStateChanged
-        .map((FirebaseUser user) => _customUser(user));
+        //.map((FirebaseUser user) => _userFromFirebaseUser(user));
+        .map(_userFromFirebaseUser);
   }
 
-  // Anon sign in
-  Future signinAnon() async {
+  // sign in anon
+  Future signInAnon() async {
     try {
       AuthResult result = await _auth.signInAnonymously();
       FirebaseUser user = result.user;
-      return _customUser(user);
+      return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
       return null;
     }
   }
 
-  // TODO: Email sign in
+  // sign in with email and password
 
-  // TODO: Register
+  // register with email and password
 
-  //TODO: Signout
-
+  // sign out
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
+      print('Sign out error: $e');
+    }
+  }
 }

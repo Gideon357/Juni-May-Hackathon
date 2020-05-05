@@ -38,7 +38,7 @@ class _SignInState extends State<SignIn> {
               icon: Icon(Icons.person),
               label: Text('Sign In Anonomously'),
               onPressed: () async {
-                dynamic result = await _auth.signinAnon();
+                dynamic result = await _auth.signInAnon();
                 if (result == null){
                   print('Error Signing In. See logs for auth_logic.dart');
                 } else{
