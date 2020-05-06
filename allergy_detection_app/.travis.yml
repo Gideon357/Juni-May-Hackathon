@@ -8,15 +8,19 @@ install:
   - echo 'Avoid default Travis CI install step' # this is to avoid an error with pub in Travis
 
 before_script:
+  - gem install coveralls-lcov
   - git clone https://github.com/flutter/flutter.git -b beta
   - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
-  - flutter config --enable-web
+#  - flutter config --enable-web
 
 script:
 #    - flutter build web
   - ./flutter/bin/flutter doctor
   - ./flutter/bin/flutter test
   
+after_success:
+  - coveralls-lcov coverage/lcov.info
+
 cache:
   directories:
     - $HOME/.pub-cache
