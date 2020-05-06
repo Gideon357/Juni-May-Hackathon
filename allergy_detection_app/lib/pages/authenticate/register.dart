@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:allergy_detection_app/services/auth_logic.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -15,6 +17,9 @@ class _RegisterState extends State<Register> {
   String email = '';
   String password = '';
   String error = '';
+
+  bool loading = false;
+
   final _formKey = GlobalKey<FormState>();
   final AuthService _auth = AuthService();
 
@@ -75,10 +80,17 @@ class _RegisterState extends State<Register> {
                   color: Colors.brown[400],
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
+                      setState(() {
+                        loading = true;
+                      });
+                      sleep(Duration(seconds: 10));
                       dynamic result =
                           await _auth.registerEmailPassword(email, password);
                       if (result == null) {
-                        setState(() => error = 'Please supply a valid email.');
+                        setState(() {
+                          error = 'Please supply a valid email.';
+                          loading = false;
+                        });
                       }
                     }
                   },

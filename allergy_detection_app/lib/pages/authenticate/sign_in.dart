@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:allergy_detection_app/services/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:allergy_detection_app/services/auth_logic.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,13 +17,15 @@ class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
+  bool loading = false;
+
   String error = '';
   String email = '';
   String password = '';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
         backgroundColor: Colors.brown[100],
         appBar: AppBar(
           elevation: 0.0,
@@ -75,11 +80,16 @@ class _SignInState extends State<SignIn> {
                   color: Colors.brown[400],
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
+                      setState(() => loading = true);
+                      sleep(Duration(seconds:5));
                       print('valid');
                       dynamic result =
                           await _auth.signinEmailPassword(email, password);
                       if (result == null) {
-                        setState(() => error = 'Could not sign-in, please try again or contact support.');
+                        setState(() {
+                          error = 'Could not sign in with those credentials';
+                          loading = false;
+                        });
                       }
                     }
                   },
