@@ -1,0 +1,31 @@
+language: dart
+dart:
+  - stable
+
+os: osx
+
+install:
+  - echo 'Avoid default Travis CI install step' # this is to avoid an error with pub in Travis
+
+before_script:
+  - git clone https://github.com/flutter/flutter.git -b beta
+  - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
+  - flutter config --enable-web
+
+script:
+#    - flutter build web
+  - ./flutter/bin/flutter doctor
+  - ./flutter/bin/flutter test
+  
+cache:
+  directories:
+    - $HOME/.pub-cache
+
+# GHpages deploy (credit: https://dev.to/freitzzz/continuous-deployment-for-flutter-web-with-travis-ci-and-github-pages-13pe)
+
+#deploy:
+#  provider: pages
+# skip_cleanup: true
+#  github_token: $GITHUB_TOKEN
+#  keep_history: true
+#  local_dir: build/web
