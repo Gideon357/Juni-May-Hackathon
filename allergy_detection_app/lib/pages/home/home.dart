@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text(
           'Home Page',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white,),
         ),
         backgroundColor: Colors.grey[900],
         elevation: 0.0,
