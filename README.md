@@ -9,7 +9,7 @@ For my hackathon project, I created a [Flutter](flutter.dev) app to help detect 
 ## Usage / Viewing Instructions
 <details>
 <summary> REPL.it </summary>
- Unfortunatley, repl doesn't support flutter, but feel free to read the code. Follow the link to the codepen to see it in action.
+ Unfortunatley, repl doesn't support flutter, but feel free to read the code. Follow the link to the codepen to see it in action. To see the decompiled APK, which is in Java, go to the 'Java' folder. The Dart code is in 'lib/.'
 </details>
 
 <details>
