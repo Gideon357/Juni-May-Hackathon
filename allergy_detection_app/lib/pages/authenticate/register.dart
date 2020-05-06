@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:allergy_detection_app/services/auth_logic.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Register extends StatefulWidget {
   final Function toggleView;
@@ -12,6 +14,9 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   String email = '';
   String password = '';
+  String error = '';
+  final _formKey = GlobalKey<FormState>();
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +39,14 @@ class _RegisterState extends State<Register> {
             horizontal: 50.0,
           ),
           child: Form(
+            key: _formKey,
             child: Column(
               children: <Widget>[
                 SizedBox(
                   height: 20.0,
                 ),
                 TextFormField(
+                  validator: (val) => val.isEmpty ? 'Enter an Email' : null,
                   onChanged: (val) {
                     setState(() {
                       email = val;
@@ -51,6 +58,7 @@ class _RegisterState extends State<Register> {
                   height: 20.0,
                 ),
                 TextFormField(
+                  validator: (val) => val.length < 6 ? 'Enter an Password 6+ chars long' : null,
                   obscureText: true,
                   onChanged: (val) {
                     setState(() {
@@ -64,7 +72,16 @@ class _RegisterState extends State<Register> {
                 ),
                 RaisedButton(
                   color: Colors.brown[400],
-                  onPressed: () async {},
+                  onPressed: () async {
+                    if (_formKey.currentState.validate()){
+                      dynamic result = await _auth.registerEmailPassword(email, password);
+                      if (result == null) {
+                        setState(() => error = 'Please supply a valid email.');
+                      } else {
+
+                      }
+                    }
+                  },
                   child: Text(
                     'Register',
                     style: TextStyle(color: Colors.white),
@@ -76,6 +93,11 @@ class _RegisterState extends State<Register> {
                   },
                   icon: Icon(Icons.person),
                   label: Text('Already Have an Account? Sign In!'),
+                ),
+                SizedBox(height: 12,),
+                Text(
+                  error,
+                  style: TextStyle(color: Colors.red, fontSize: 14.0),
                 )
               ],
             ),
