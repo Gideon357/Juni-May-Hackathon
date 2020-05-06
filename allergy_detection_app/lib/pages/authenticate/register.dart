@@ -58,7 +58,8 @@ class _RegisterState extends State<Register> {
                   height: 20.0,
                 ),
                 TextFormField(
-                  validator: (val) => val.length < 6 ? 'Enter an Password 6+ chars long' : null,
+                  validator: (val) =>
+                      val.length < 6 ? 'Enter an Password 6+ chars long' : null,
                   obscureText: true,
                   onChanged: (val) {
                     setState(() {
@@ -73,12 +74,11 @@ class _RegisterState extends State<Register> {
                 RaisedButton(
                   color: Colors.brown[400],
                   onPressed: () async {
-                    if (_formKey.currentState.validate()){
-                      dynamic result = await _auth.registerEmailPassword(email, password);
+                    if (_formKey.currentState.validate()) {
+                      dynamic result =
+                          await _auth.registerEmailPassword(email, password);
                       if (result == null) {
                         setState(() => error = 'Please supply a valid email.');
-                      } else {
-
                       }
                     }
                   },
@@ -94,7 +94,9 @@ class _RegisterState extends State<Register> {
                   icon: Icon(Icons.person),
                   label: Text('Already Have an Account? Sign In!'),
                 ),
-                SizedBox(height: 12,),
+                SizedBox(
+                  height: 12,
+                ),
                 Text(
                   error,
                   style: TextStyle(color: Colors.red, fontSize: 14.0),

@@ -12,7 +12,9 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
 
+  String error = '';
   String email = '';
   String password = '';
 
@@ -37,12 +39,14 @@ class _SignInState extends State<SignIn> {
             horizontal: 50.0,
           ),
           child: Form(
+            key: _formKey,
             child: Column(
               children: <Widget>[
                 SizedBox(
                   height: 20.0,
                 ),
                 TextFormField(
+                  validator: (val) => val.isEmpty ? 'Enter an Email' : null,
                   onChanged: (val) {
                     setState(() {
                       email = val;
@@ -54,6 +58,8 @@ class _SignInState extends State<SignIn> {
                   height: 20.0,
                 ),
                 TextFormField(
+                  validator: (val) =>
+                      val.length < 6 ? 'Enter an Password 6+ chars long' : null,
                   obscureText: true,
                   onChanged: (val) {
                     setState(() {
@@ -67,7 +73,16 @@ class _SignInState extends State<SignIn> {
                 ),
                 RaisedButton(
                   color: Colors.brown[400],
-                  onPressed: () async {},
+                  onPressed: () async {
+                    if (_formKey.currentState.validate()) {
+                      print('valid');
+                      dynamic result =
+                          await _auth.signinEmailPassword(email, password);
+                      if (result == null) {
+                        setState(() => error = 'Could not sign-in, please try again or contact support.');
+                      }
+                    }
+                  },
                   child: Text(
                     'Sign In',
                     style: TextStyle(color: Colors.white),
@@ -78,7 +93,11 @@ class _SignInState extends State<SignIn> {
                       widget.toggleView();
                     },
                     icon: Icon(Icons.person),
-                    label: Text('Don\'t have an account? Sign Up!'))
+                    label: Text('Don\'t have an account? Sign Up!')),
+                Text(
+                  error,
+                  style: TextStyle(color: Colors.red, fontSize: 14.0),
+                )
               ],
             ),
           ),
