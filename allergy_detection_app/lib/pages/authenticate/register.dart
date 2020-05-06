@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:allergy_detection_app/services/auth_logic.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   final Function toggleView;
-  SignIn({this.toggleView});
+
+  Register({this.toggleView});
 
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
-  final AuthService _auth = AuthService();
-
+class _RegisterState extends State<Register> {
   String email = '';
   String password = '';
 
@@ -69,16 +66,17 @@ class _SignInState extends State<SignIn> {
                   color: Colors.brown[400],
                   onPressed: () async {},
                   child: Text(
-                    'Sign In',
+                    'Register',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
                 FlatButton.icon(
-                    onPressed: () {
-                      widget.toggleView();
-                    },
-                    icon: Icon(Icons.person),
-                    label: Text('Don\'t have an account? Sign Up!'))
+                  onPressed: () {
+                    widget.toggleView();
+                  },
+                  icon: Icon(Icons.person),
+                  label: Text('Already Have an Account? Sign In!'),
+                )
               ],
             ),
           ),
