@@ -1,7 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:allergy_detection_app/services/auth_logic.dart';
+import 'package:allergy_detection_app/services/loading.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Register extends StatefulWidget {
@@ -25,13 +25,13 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
         backgroundColor: Colors.brown[100],
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: Colors.brown[400],
           title: Text(
-            'Login / Sign Up',
+            'Sign Up to Allergen Scanner',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -51,6 +51,9 @@ class _RegisterState extends State<Register> {
                   height: 20.0,
                 ),
                 TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Email',
+                  ),
                   validator: (val) => val.isEmpty ? 'Enter an Email' : null,
                   onChanged: (val) {
                     setState(() {
@@ -63,6 +66,9 @@ class _RegisterState extends State<Register> {
                   height: 20.0,
                 ),
                 TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Password'
+                  ),
                   validator: (val) =>
                       val.length < 6 ? 'Enter an Password 6+ chars long' : null,
                   obscureText: true,
@@ -83,7 +89,6 @@ class _RegisterState extends State<Register> {
                       setState(() {
                         loading = true;
                       });
-                      sleep(Duration(seconds: 10));
                       dynamic result =
                           await _auth.registerEmailPassword(email, password);
                       if (result == null) {
