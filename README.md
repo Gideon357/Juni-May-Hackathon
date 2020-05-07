@@ -1,6 +1,6 @@
 # Juni May 2020 Hackathon 
 
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod&style=for-the-badge)](https://gitpod.io/#https://github.com/gideon357/Juni-May-Hackathon)
+[![Open on Codepen](https://img.shields.io/badge/Codepen-ready--to--code-blue?logo=codepen&style=for-the-badge)](https://gitpod.io/#https://github.com/gideon357/Juni-May-Hackathon)
 ![Travis (.org) branch](https://img.shields.io/travis/gideon357/Juni-May-Hackathon/master?style=for-the-badge)
 ![Download on the App Store](https://raw.githubusercontent.com/Gideon357/Juni-May-Hackathon/master/uploads/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg)
 
