@@ -16,7 +16,12 @@ class DatabaseService {
       'name': name,
       'allegies': allergies,
       'superuser': isSuperUser,
-      'newUser' : isNewUser
+      'newUser': isNewUser
     });
+  }
+
+  // Stream
+  Stream<QuerySnapshot> get users {
+    return userCollection.snapshots();
   }
 }
