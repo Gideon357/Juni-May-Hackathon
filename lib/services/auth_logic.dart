@@ -1,3 +1,4 @@
+import 'package:allergy_detection_app/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:allergy_detection_app/services/user.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,9 @@ class AuthService {
     try {
       AuthResult result = await _auth.signInAnonymously();
       FirebaseUser user = result.user;
+
+      await DatabaseService(uid: user.uid).updateUserData();
+
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
