@@ -8,15 +8,15 @@ class DatabaseService {
   DatabaseService({this.uid});
 
   Future updateUserData(
-      {bool newUser = true,
-      List<String> allergies,
+      {bool isNewUser = true,
       bool isSuperUser = false,
+      List<String> allergies,
       String name = 'Null'}) async {
     return await userCollection.document(uid).setData({
       'name': name,
       'allegies': allergies,
       'superuser': isSuperUser,
-      'newUser' : newUser
+      'newUser' : isNewUser
     });
   }
 }
