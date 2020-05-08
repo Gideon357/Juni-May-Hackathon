@@ -1,8 +1,9 @@
 # Juni May 2020 Hackathon 
 
 [![Open on Codepen](https://img.shields.io/badge/Codepen-ready--to--code-blue?logo=codepen&style=for-the-badge)](https://codepen.io)
+[![Download on the App Store](https://img.shields.io/badge/Download-on%20the%20App%20Store-blue?style=for-the-badge&logo=app-store)](apple.com)
 ![Travis (.org) branch](https://img.shields.io/travis/gideon357/Juni-May-Hackathon/master?style=for-the-badge)
-[![Download on the App Store](uploads/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg)](https://apple.com)
+![Codecov](https://img.shields.io/codecov/c/gh/gideon357/allergy_prevention_app?style=for-the-badge)
 
 For my hackathon project, I created a [Flutter](flutter.dev) app to help detect allergens in products. It uses Firebase ML's barcode scanning, OCR, and image processing to do this. Read on or watch my [submission video](example.com) for more info!
 
