@@ -14,7 +14,7 @@ For my entry to the Juni May 2020 hackathon, I created a [Flutter](flutter.dev) 
 
 ## About Me
 
-My name is Gideon Grinberg, and I have been coding for ~9 Months. I don't personally have allergies, but a lot of my friends do. My first programming language was Python 🐍, and currently I'm coding out the TF models for this project in Python. I used Flutter, which I learned during quarentine for the project.
+My name is Gideon Grinberg, and I have been coding for ~9 Months. I don't personally have allergies, but a lot of my friends do. My first programming language was Python 🐍, and currently I'm coding out the TF models for this project in Python. I used Flutter, which I learned during quarentine.
 
 ## Why I made this
 
