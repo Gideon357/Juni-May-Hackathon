@@ -1,7 +1,6 @@
 import 'package:allergy_detection_app/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:allergy_detection_app/services/user.dart';
-import 'package:flutter/material.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -37,14 +36,17 @@ class AuthService {
   Future registerEmailPassword(String email, String password) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+          email: email.trim(), password: password);
+
       FirebaseUser user = result.user;
+      await DatabaseService(uid: user.uid).updateUserData();
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
       return null;
     }
   }
+
   // sign-in with email and password
   Future signinEmailPassword(String email, String password) async {
     try {
