@@ -15,10 +15,22 @@ class Home extends StatelessWidget {
     return StreamProvider<QuerySnapshot>.value(
       value: DatabaseService().users,
       child: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+               child: Text('Allergen Scanner'),
+              ),
+              ListTile(
+
+              )
+            ],
+          ),
+        ),
         backgroundColor: Colors.brown[50],
         appBar: AppBar(
-          title: Text('Brew Crew'),
-          backgroundColor: Colors.brown[400],
+          title: Text('Allergen Scanner'),
           elevation: 0.0,
           actions: <Widget>[
             FlatButton.icon(
@@ -35,3 +47,4 @@ class Home extends StatelessWidget {
     );
   }
 }
+

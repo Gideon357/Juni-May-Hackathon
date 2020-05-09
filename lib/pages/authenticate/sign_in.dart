@@ -28,10 +28,9 @@ class _SignInState extends State<SignIn> {
     return loading
         ? Loading()
         : Scaffold(
-            backgroundColor: Colors.brown[100],
             appBar: AppBar(
               elevation: 0.0,
-              backgroundColor: Colors.brown[400],
+              backgroundColor: Colors.black,
               title: Text(
                 'Login to Allergen Scanner',
                 style: TextStyle(
@@ -82,7 +81,7 @@ class _SignInState extends State<SignIn> {
                       height: 20.0,
                     ),
                     RaisedButton(
-                      color: Colors.brown[400],
+                      color: Colors.black,
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {
                           setState(() => loading = true);
