@@ -7,7 +7,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:allergy_detection_app/services/database.dart';
 
 class Home extends StatelessWidget {
-
   final AuthService _auth = AuthService();
 
   @override
@@ -20,11 +19,9 @@ class Home extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: <Widget>[
               DrawerHeader(
-               child: Text('Allergen Scanner'),
+                child: Text('Allergen Scanner'),
               ),
-              ListTile(
-
-              )
+              ListTile()
             ],
           ),
         ),
@@ -34,11 +31,14 @@ class Home extends StatelessWidget {
           elevation: 0.0,
           actions: <Widget>[
             FlatButton.icon(
-              icon: Icon(Icons.person),
-              label: Text('logout'),
-              onPressed: () async {
-                await _auth.signOut();
-              },
+              icon: Icon(Icons.person, color: Colors.white),
+              label: Text(
+                'Logout',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () async {},
             ),
           ],
         ),
@@ -47,4 +47,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-

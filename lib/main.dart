@@ -1,4 +1,5 @@
 import 'package:allergy_detection_app/services/auth_logic.dart';
+import 'package:allergy_detection_app/widgets/drawer_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:allergy_detection_app/pages/wrapper.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
-        home: Wrapper(),
+        home: DrawerLayout(),
+        //home: Wrapper(),
+        //TODO: Replace drawer layout with wrapper 
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
           primaryColor: Colors.black,
