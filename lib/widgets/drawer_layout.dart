@@ -35,6 +35,14 @@ class DrawerLayout extends StatelessWidget {
                 DrawerItem(
                   text: 'Logout',
                   onPressed: () {},
+                ),
+                DrawerItem(
+                  text: 'Support',
+                  onPressed: () {},
+                ),
+                DrawerItem(
+                  text: 'Terms and Conditions',
+                  onPressed: () {},
                 )
               ],
             ),
