@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
-        home: DrawerLayout(),
+        home: Wrapper(),
         //home: Wrapper(),
         //TODO: Replace drawer layout with wrapper 
         theme: ThemeData(

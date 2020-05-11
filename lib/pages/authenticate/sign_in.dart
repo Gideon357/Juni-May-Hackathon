@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:allergy_detection_app/services/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:allergy_detection_app/services/auth_logic.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggleView;

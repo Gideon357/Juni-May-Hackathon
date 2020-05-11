@@ -8,15 +8,17 @@ class DrawerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      child: Text(
-        text,
-        style: TextStyle(
-          fontWeight: FontWeight.w600,
-          fontSize: 18,
+    return Container(
+      child: FlatButton(
+        child: Text(
+          text,
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 18,
+          ),
         ),
+        onPressed: onPressed,
       ),
-      onPressed: onPressed,
     );
   }
 }

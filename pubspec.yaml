@@ -21,7 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  flutter_bloc: ^2.1.1
+  neumorphic: any
   font_awesome_flutter: ^8.8.1
   flutter_spinkit: ^4.0.0
   provider: ^3.1.0 #'>= 3.1.0 <=3.1.0'
