@@ -10,6 +10,8 @@ class DrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: FlatButton(
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
         child: Text(
           text,
           style: TextStyle(
