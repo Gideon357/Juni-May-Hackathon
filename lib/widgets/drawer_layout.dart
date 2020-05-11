@@ -15,7 +15,7 @@ class DrawerLayout extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.only(top: 48.0),
           child: SingleChildScrollView(
-                      child: Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 Padding(
