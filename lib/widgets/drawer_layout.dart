@@ -15,83 +15,85 @@ class DrawerLayout extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.only(top: 48.0),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 20, bottom: 20),
-                  child: Container(
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Icon(
-                      Icons.close,
-                      color: Colors.white,
+            child: Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20, bottom: 20),
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                ),
-                DrawerItem(
-                  text: 'Home',
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    Navigator.of(context).pushReplacementNamed('/home');
-                  },
-                ),
-                DrawerItem(
-                  text: 'Scanner',
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    Navigator.of(context).pushReplacementNamed('/scanner');
-                  },
-                ),
-                DrawerItem(
-                  text: 'Profile',
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    Navigator.of(context).pushReplacementNamed('/profile');
-                  },
-                ),
-                DrawerItem(
-                  text: 'App Settings',
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    Navigator.of(context).pushReplacementNamed('/scanner');
-                  },
-                ),
-                DrawerItem(
-                  text: 'Support',
-                  onPressed: () {},
-                ),
-                DrawerItem(
-                  text: 'Terms and Conditions',
-                  onPressed: () {},
-                ),
-                FlatButton(
-                  child: RichText(
-                    text: TextSpan(children: [
-                      TextSpan(
-                          text: 'Wrong User? ',
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.grey)),
-                      TextSpan(
-                          text: 'Sign out',
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              decoration: TextDecoration.underline))
-                    ]),
+                  DrawerItem(
+                    text: 'Home',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pushReplacementNamed('/home');
+                    },
                   ),
-                  onPressed: () {
-                    auth.signOut();
-                  },
-                )
-              ],
+                  DrawerItem(
+                    text: 'Scanner',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pushReplacementNamed('/scanner');
+                    },
+                  ),
+                  DrawerItem(
+                    text: 'Profile',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pushReplacementNamed('/profile');
+                    },
+                  ),
+                  DrawerItem(
+                    text: 'App Settings',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pushReplacementNamed('/scanner');
+                    },
+                  ),
+                  DrawerItem(
+                    text: 'Support',
+                    onPressed: () {},
+                  ),
+                  DrawerItem(
+                    text: 'Terms and Conditions',
+                    onPressed: () {},
+                  ),
+                  FlatButton(
+                    child: RichText(
+                      text: TextSpan(children: [
+                        TextSpan(
+                            text: 'Wrong User? ',
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.grey)),
+                        TextSpan(
+                            text: 'Sign out',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                decoration: TextDecoration.underline))
+                      ]),
+                    ),
+                    onPressed: () {
+                      auth.signOut();
+                    },
+                  )
+                ],
+              ),
             ),
           ),
         ),
