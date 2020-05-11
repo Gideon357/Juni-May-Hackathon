@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "878428425881",
+    "firebase_url": "https://juni-parkinsons-project.firebaseio.com",
+    "project_id": "juni-parkinsons-project",
+    "storage_bucket": "juni-parkinsons-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878428425881:android:80d7032c54f9ea2254b208",
+        "android_client_info": {
+          "package_name": "com.gideongrinberg.parkinsons_detection_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878428425881-e782pnak7ljqdt8jlbdd48j6kt8f419i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKIzV_wqVnZtZ1UsSOcsy1wylDKih4NYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878428425881-e782pnak7ljqdt8jlbdd48j6kt8f419i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "878428425881-i8eivn6q5pjg1alll14dvog6u5uofq3c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gideongrinberg.parkinsonsDetectionApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
